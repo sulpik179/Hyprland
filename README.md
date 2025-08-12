@@ -1,2 +1,1 @@
-# Hyprland
-hyprland.conf, config.jsonc, style.css
+This is Hyprland configs
