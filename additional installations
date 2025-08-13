@@ -21,4 +21,5 @@ makepkg -si
 #  APPS  #
 sudo pacman -S neovim  #  code editor
 sudo pacman -S nautilus  #  file manager
+sudo pacman -S swww  #  wallpaper manager
 
