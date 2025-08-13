@@ -4,6 +4,12 @@ sudo pacman -Sy
 #  SCRIPTS  #
 
     #  RESTART_WAYBAR.SH  #
+    mkdir ~/.config/scripts
+    nvim  ~/.config/scripts/restart_waybar.sh
+        #!/bin/fish
+        killall waybar
+        waybar &
+    chmod +x ~/.config/scripts/restart_waybar.sh
 
 #  FISH SHELL  #
 sudo pacman -S fish
