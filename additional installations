@@ -1,1 +1,8 @@
-
+#  UPDATE SYS  #
+sudo pacman -Sy
+#  FISH SHELL  #
+sudo pacman -S fish
+chsh -s /usr/bin/fish
+#  APPS  #
+sudo pacman -S nautilus  #  file manager
+sudo pacman -S telegram-desktop  #  telegram
