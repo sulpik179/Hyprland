@@ -1,8 +1,24 @@
 #  UPDATE SYS  #
 sudo pacman -Sy
+
 #  FISH SHELL  #
 sudo pacman -S fish
 chsh -s /usr/bin/fish
+
+#  FONT  #
+sudo pacman -S ttf-jetbrains-mono-nerd
+nvim .config/kitty/kitty.conf
+font_family JetBrainsMono Nerd Font
+enable_ligatures yes
+
+#  YAY  #
+sudo pacman -Syu
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
 #  APPS  #
+sudo pacman -S neovim  #  code editor
 sudo pacman -S nautilus  #  file manager
-sudo pacman -S telegram-desktop  #  telegram
+
