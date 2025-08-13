@@ -24,6 +24,8 @@ makepkg -si
 
     #  YAY APPS  #
     yay -S visual-studio-code-bin  #  vs code
+    yay -S telegram-desktop-bin  #  telegram
+
 
 #  FLATPAK  #
 sudo pacman -S flatpak
