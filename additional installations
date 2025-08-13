@@ -18,6 +18,10 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+    #  YAY APPS  #
+    yay -S visual-studio-code-bin
+
+    
 #  FLATPAK  #
 sudo pacman -S flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
