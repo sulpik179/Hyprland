@@ -4,7 +4,6 @@ sudo pacman -Sy
 #  SCRIPTS  #
 
     #  RESTART_WAYBAR.SH  #
-    
 
 #  FISH SHELL  #
 sudo pacman -S fish
@@ -26,14 +25,11 @@ makepkg -si
     #  YAY APPS  #
     yay -S visual-studio-code-bin  #  vs code
 
-    
 #  FLATPAK  #
 sudo pacman -S flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
     #  FLATPAK APPS  #
-    flatpak run org.telegram.desktop  #  telegram
-
 
 #  APPS  #
 sudo pacman -S neovim  #  code editor
