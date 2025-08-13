@@ -43,4 +43,5 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 sudo pacman -S neovim  #  code editor
 sudo pacman -S nautilus  #  file manager
 sudo pacman -S swww  #  wallpaper manager
+sudo pacman -S obsidian  #  notions
 
