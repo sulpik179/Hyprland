@@ -1,3 +1,0 @@
-#Input this in the terminal
-sudo pacman -S fish
-chsh -s /usr/bin/fish
