@@ -18,6 +18,14 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+#  FLATPAK  #
+sudo pacman -S flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+    #  FLATPAK APPS  #
+    flatpak run org.telegram.desktop
+
+
 #  APPS  #
 sudo pacman -S neovim  #  code editor
 sudo pacman -S nautilus  #  file manager
