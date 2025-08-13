@@ -1,0 +1,2 @@
+sudo pacman -S fish
+chsh -s /usr/bin/fish
