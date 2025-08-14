@@ -16,6 +16,13 @@ makepkg -si
     yay -S visual-studio-code-bin  #  vs code
     yay -S telegram-desktop-bin  #  telegram
 
+#  IWGTK  #
+sudo pacman -S iwd
+sudo systemctl enable --now iwd.service
+systemctl status iwd.service
+yay -S iwgtk
+iwgtk
+
 #  FLATPAK  #
 sudo pacman -S flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
