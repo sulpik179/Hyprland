@@ -1,0 +1,42 @@
+sudo pacman -S hyprlock
+code .config/hypr/hyprlock.conf
+  background {
+      path = /home/megabook/Pictures/wallpaper/wall.jpg
+      blur_passes = 1        # количество проходов размытия (чем больше, тем сильнее)
+      blur_size = 5        # размер размытия
+      color = rgba(0, 0, 0, 0)  # цветовой фильтр (можно оставить прозрачным)
+  }
+  # Часы чуть выше середины (положение на Y = -50 примерно)
+  label {
+      text = cmd[update:1000] echo "<b>$(date +'%H:%M:%S')</b>"
+      font_size = 72
+      color = rgb(255, 255, 255)  # цвет часов, можно сменить
+      halign = center
+      valign = center
+      position = 0, 90
+  }
+  
+  # Дата под часами (Y = 20, чуть ниже относительно часов)
+  label {
+      text = cmd[update:60000] echo "<b>$(date +'%A, %d %B %Y')</b>"
+      font_size = 28
+      color = rgb(200, 200, 200)  # цвет даты, можно сменить
+      halign = center
+      valign = center
+      position = 0, 20
+  }
+  
+  # Поле ввода под датой (Y = 90, еще ниже)
+  input-field {
+      size = 200, 30
+      outline_thickness = 3       # толщина рамки
+      outer_color = rgba(255, 255, 255, 1)  # цвет рамки, поменяйте на нужный вам
+      inner_color = rgba(10, 10, 30, 0)    # цвет фона поля ввода, меняйте под себя
+      font_color = rgb(255, 255, 255)  # цвет текста в поле ввода
+      placeholder_text = <i>-</i>
+      hide_input = true
+      position = 0, -50
+      halign = center
+      valign = center
+      rounding = 10               # скругление углов поля
+  }
