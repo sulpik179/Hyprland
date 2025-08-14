@@ -6,7 +6,22 @@
     waybar &
   chmod +x ~/.config/scripts/restart_waybar.sh
 
-  
+#  FISH SHELL  #
+  sudo pacman -S inetutils
+  nvim ~/.config/fish/config.fish
+    function fish_prompt
+      if status is-interactive
+          set_color 2de3c8     # цвет имени пользователя (#02ebc8 — можно и в hex прямо)
+          echo -n (whoami)
+          set_color normal
+          echo -n '@'
+          set_color white      # цвет хоста
+          echo -n (hostname -s)
+          set_color normal
+          echo -n ' ~> '
+      end
+    end
+
     
 #  KITTY Terminal  #
   sudo pacman -S ttf-jetbrains-mono-nerd
