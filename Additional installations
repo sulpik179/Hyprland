@@ -28,3 +28,4 @@ sudo pacman -S nautilus  #  file manager
 sudo pacman -S swww  #  wallpaper manager
 sudo pacman -S obsidian  #  notions
 sudo pacman -S hyprpicker
+sudo pacman -S swayimg 
