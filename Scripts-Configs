@@ -1,14 +1,15 @@
 #  RESTART_WAYBAR.SH  #
   mkdir ~/.config/scripts
-  nvim  ~/.config/scripts/restart_waybar.sh
+  code  ~/.config/scripts/restart_waybar.sh
     #!/bin/fish
-    killall waybar
+    pkill waybar
+    sleep 0.5
     waybar &
   chmod +x ~/.config/scripts/restart_waybar.sh
 
 #  FISH SHELL  #
   sudo pacman -S inetutils
-  nvim ~/.config/fish/config.fish
+  code ~/.config/fish/config.fish
     function fish_prompt
       if status is-interactive
           set_color 2de3c8     # цвет имени пользователя (#02ebc8 — можно и в hex прямо)
@@ -25,7 +26,7 @@
     
 #  KITTY Terminal  #
   sudo pacman -S ttf-jetbrains-mono-nerd
-  nvim .config/kitty/kitty.conf
+  code .config/kitty/kitty.conf
     #  _    _ _   _           _                      _             _  
     # | | _(_) |_| |_ _   _  | |_ ___ _ __ _ __ ___ (_)_ __   __ _| | 
     # | |/ / | __| __| | | | | __/ _ \ '__| '_ ` _ \| | '_ \ / _` | | 
