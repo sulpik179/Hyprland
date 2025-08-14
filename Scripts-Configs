@@ -7,6 +7,8 @@
     waybar &
   chmod +x ~/.config/scripts/restart_waybar.sh
 
+
+
 #  FISH SHELL  #
   sudo pacman -S inetutils
   code ~/.config/fish/config.fish
