@@ -1,25 +1,9 @@
 #  UPDATE SYS  #
 sudo pacman -Sy
 
-#  SCRIPTS  #
-
-    #  RESTART_WAYBAR.SH  #
-    mkdir ~/.config/scripts
-    nvim  ~/.config/scripts/restart_waybar.sh
-        #!/bin/fish
-        killall waybar
-        waybar &
-    chmod +x ~/.config/scripts/restart_waybar.sh
-
 #  FISH SHELL  #
 sudo pacman -S fish
 chsh -s /usr/bin/fish
-
-#  FONT  #
-sudo pacman -S ttf-jetbrains-mono-nerd
-nvim .config/kitty/kitty.conf
-font_family JetBrainsMono Nerd Font
-enable_ligatures yes
 
 #  YAY  #
 sudo pacman -Syu
@@ -31,7 +15,6 @@ makepkg -si
     #  YAY APPS  #
     yay -S visual-studio-code-bin  #  vs code
     yay -S telegram-desktop-bin  #  telegram
-
 
 #  FLATPAK  #
 sudo pacman -S flatpak
