@@ -12,7 +12,7 @@
   code ~/.config/fish/config.fish
     function fish_prompt
       if status is-interactive
-          set_color 2de3c8     # цвет имени пользователя (#02ebc8 — можно и в hex прямо)
+          set_color 2de3c8     # цвет имени пользователя 
           echo -n (whoami)
           set_color normal
           echo -n '@'
