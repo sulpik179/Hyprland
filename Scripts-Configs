@@ -2,8 +2,8 @@
   mkdir ~/.config/scripts
   code  ~/.config/scripts/restart_waybar.sh
     #!/bin/fish
-    pkill waybar
-    sleep 0.5
+    killall waybar
+    sleep 0.1
     waybar &
   chmod +x ~/.config/scripts/restart_waybar.sh
 
