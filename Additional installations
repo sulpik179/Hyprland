@@ -30,4 +30,4 @@ sudo pacman -S obsidian  #  notions
 sudo pacman -S hyprpicker
 sudo pacman -S swayimg 
 sudo pacman -S power-profiles-daemon
-sudo pacman -S redshift
+
