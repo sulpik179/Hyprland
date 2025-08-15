@@ -3,16 +3,6 @@
 #  UPDATE SYS  #
 sudo pacman -Syu
 
-#  YAY  #
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
- #  YAY APPS  #
-yay -S visual-studio-code-bin  #  vs code
-yay -S telegram-desktop-bin  #  telegram
-
 #  IWGTK  #
 sudo pacman -S iwd
 sudo systemctl enable --now iwd.service
@@ -22,8 +12,6 @@ iwgtk
 
 #  APPS INSTALL  #
 sudo pacman -S neovim nautilus swww obsidian hyprpicker swayimg power-profiles-daemon wlsunset waybar
-
-
 
 #  RESTART_WAYBAR.SH  #
 mkdir -p ~/.config/scripts
