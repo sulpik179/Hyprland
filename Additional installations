@@ -3,7 +3,7 @@ sudo pacman -Syu
 
 #  FISH SHELL  #
 sudo pacman -S fish
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish
 
 #  YAY  #
 sudo pacman -Syu
