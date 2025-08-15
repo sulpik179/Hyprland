@@ -1,3 +1,5 @@
+mkdir -p ~/.config/waybar
+cd ~/.config/waybar
 mkdir ~/.config/waybar/style.css
 mkdir ~/.config/waybar/config.jsonc
 
