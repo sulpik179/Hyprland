@@ -1,242 +1,138 @@
-* {
-    font-family: 'JetBrains Mono';
-    font-size: 14px;
+{
+    "width": 1250,
+    "height": 37, 
+    "spacing": 6, 
+    "modules-left": [
+        "bluetooth",
+        "network",
+        "hyprland/language",
+        "clock"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "power-profiles-daemon",
+        "temperature",
+        "keyboard-state",
+        "battery"
+    ],
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d-%m}"
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity} {icon} ",
+        "format-full": "{capacity} {icon} ",
+        "format-charging": "{capacity} ",
+        "format-plugged": "{capacity} ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  {signalStrength}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠",
+        "format-alt": "{essid}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}",
+        "format-bluetooth": "{volume} {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume} ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": "",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "hyprland/language": 
+    {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "RU",
+    "keyboard-name": "at-translated-set-2-keyboard"
+    },
+
+    "hyprland/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"active": "✖",
+		"default": ""
+	},
+       "persistent-workspaces": {
+             "*": 5, // 5 workspaces by default on every monitor
+             "HDMI-A-1": 3 // but only three on HDMI-A-1
+       }
 }
 
-#waybar > * {
-    padding: 2px; /* Отступ внутри модуля */
-    margin: 0 0px; /* Отступ между модулями если дополнительно */
 }
 
-window#waybar {
-    background-color: transparent;
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
-/* window#waybar.hidden {
-    opacity: 0.2;
-} */
-/* window#waybar.termite {
-    background-color: #3F3F3F;
-} */
-/* window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-} */
-
-
-
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0px;
-}
-
-button:hover {
-    background: #11282C;
-
-}
-
-
-
-#pulseaudio:hover {
-    background-color: #8d6700;
-}
-
-
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-    
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.297);
-}
-
-#workspaces button.urgent {
-    background-color: #ff524f;
-}
-
-
-
-/* #mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-} */
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
-}
-
-#clock {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#battery {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-    padding: 0 7px;
-}
-
-#battery.charging, #battery.plugged {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    border-radius: 7px;
-}
-
-#power-profiles-daemon {
-    padding-right: 15px;
-    border-radius: 7px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-    border-radius: 7px;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-    border-radius: 7px;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-    border-radius: 7px;
-}
-
-#backlight {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#network {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#network.disconnected {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#pulseaudio {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#pulseaudio.muted {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#wireplumber {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#wireplumber.muted {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#custom-media {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(222, 205, 175);
-    border-radius: 7px;
-}
-
-#temperature {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#temperature.critical {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#language {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-    padding: 3 10px;
-}
-
-#bluetooth {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-    padding: 3 10px;
-}
