@@ -1,5 +1,5 @@
 #  UPDATE SYS  #
-sudo pacman -Sy
+sudo pacman -Syu
 
 #  FISH SHELL  #
 sudo pacman -S fish
