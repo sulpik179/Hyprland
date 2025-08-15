@@ -1,3 +1,6 @@
+mkdir ~/.config/waybar/style.css
+mkdir ~/.config/waybar/config.jsonc
+
 #  RESTART_WAYBAR.SH  #
   mkdir ~/.config/scripts
   code  ~/.config/scripts/restart_waybar.sh
