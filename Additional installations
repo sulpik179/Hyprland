@@ -4,6 +4,7 @@ sudo pacman -Syu
 #  FISH SHELL  #
 sudo pacman -S fish
 sudo chsh -s /usr/bin/fish
+reboot
 
 #  YAY  #
 sudo pacman -Syu
