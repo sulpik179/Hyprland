@@ -29,8 +29,8 @@ mkdir ~/.config/waybar/config.jsonc
           echo -n ' ~> '
       end
     end
+    set -g fish_greeting ""
 
-    
 #  KITTY Terminal  #
   sudo pacman -S ttf-jetbrains-mono-nerd
   code .config/kitty/kitty.conf
