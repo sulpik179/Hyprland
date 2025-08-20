@@ -233,6 +233,12 @@ button:hover {
     padding: 3 10px;
 }
 
+#language.RU {
+    background-color: rgb(255, 243, 224);
+    color: #11282C;
+}
+
+
 #bluetooth {
     background-color: #11282C;
     opacity: 0.9;
