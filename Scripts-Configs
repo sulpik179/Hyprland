@@ -12,6 +12,21 @@ mkdir ~/.config/waybar/config.jsonc
     waybar &
   chmod +x ~/.config/scripts/restart_waybar.sh
 
+#  SPOTIFY  #
+code ~/.config/waybar/spotify-status.sh
+chmod +x ~/.config/waybar/spotify-status.sh
+#!/bin/bash
+# Получить статус воспроизведения (Playing или Paused)
+status=$(playerctl -p spotify status 2>/dev/null)
+
+if [ "$status" == "Playing" ]; then
+    # Получить имя артиста и название трека
+    artist=$(playerctl -p spotify metadata artist)
+    title=$(playerctl -p spotify metadata title)
+    echo "  $artist - $title"
+else
+    echo "  Нет воспроизведения"
+fi
 
 #  FISH SHELL  #
   sudo pacman -S inetutils
