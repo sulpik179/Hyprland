@@ -28,6 +28,19 @@ else
     echo "  Нет воспроизведения"
 fi
 
+#  NOTIONS  #
+code ~/.config/mako/config
+
+font=JetBrains Mono 11
+background-color=#11282CFF
+border-color=#51AFEFFF
+border-size=2
+padding=10
+margin=10
+default-timeout=10000
+border-radius=8
+
+
 #  FISH SHELL  #
   sudo pacman -S inetutils
   code ~/.config/fish/config.fish
