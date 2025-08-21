@@ -184,18 +184,18 @@ button:hover {
 }
 
 #pulseaudio.muted {
-    background-color: #11282C;
+    background-color: #9d0000;
     opacity: 0.9;
     color: rgb(255, 243, 224);
     border-radius: 7px;
 }
 
-#wireplumber {
+/* #wireplumber {
     background-color: #11282C;
     opacity: 0.9;
     color: rgb(255, 243, 224);
     border-radius: 7px;
-}
+} */
 
 #wireplumber.muted {
     background-color: #11282C;
@@ -233,16 +233,28 @@ button:hover {
     padding: 3 10px;
 }
 
-#language.RU {
-    background-color: rgb(255, 243, 224);
-    color: #11282C;
+ 
+#bluetooth {
+    background-color: #11282C;   /* Фон по умолчанию (для подключенного) */
+    opacity: 0.9;
+    color: rgb(255, 243, 224);            /* Цвет текста для подключенного */
+    border-radius: 7px;
+    padding: 3px 10px;
+}
+
+/* При выключенном Bluetooth */
+#bluetooth.connected {
+  background-color: rgb(255, 243, 224);   
+  color: #11282C;
 }
 
 
-#bluetooth {
-    background-color: #11282C;
+#custom-spotify {
     opacity: 0.9;
-    color: rgb(255, 243, 224);
+    background-color: #1db954;
+    color: #11282C;
     border-radius: 7px;
     padding: 3 10px;
+    font-weight: bold;
 }
+
