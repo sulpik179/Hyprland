@@ -3,6 +3,32 @@ cd ~/.config/waybar
 mkdir ~/.config/waybar/style.css
 mkdir ~/.config/waybar/config.jsonc
 
+#  TOUCHPAD  #
+code  ~/.config/scripts/touchpad-toggle.sh
+#!/usr/bin/env bash
+
+STATE_FILE="$HOME/.touchpad_state"  # Путь к файлу, где хранится состояние
+
+DEVICE="htix5288:00-093a:0255-touchpad"
+
+# Проверяем, существует ли файл и содержит ли он слово "off" (тачпад выключен)
+if [ -f "$STATE_FILE" ] && grep -q "off" "$STATE_FILE"; then
+    # Если файл есть и там "off" — значит сейчас тачпад выключен, нужно включить
+    echo "Включаем тачпад"
+    hyprctl keyword "device[$DEVICE]:enabled" true
+    echo "on" > "$STATE_FILE"  # Записываем в файл новое состояние — включён
+    notify-send "Тачпад включён"  # Посылаем уведомление в системе
+else
+    # Если файла нет или там не "off" — считаем, что тачпад включён, надо выключить
+    echo "Отключаем тачпад"
+    hyprctl keyword "device[$DEVICE]:enabled" false
+    echo "off" > "$STATE_FILE"  # Записываем в файл новое состояние — выключен
+    notify-send "Тачпад отключён"  # Уведомление системы
+fi
+
+chmod +x ~/.config/scripts/touchpad-toggle.sh
+
+
 #  RESTART_WAYBAR.SH  #
   mkdir ~/.config/scripts
   code  ~/.config/scripts/restart_waybar.sh
