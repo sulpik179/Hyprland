@@ -40,3 +40,4 @@ sudo pacman -S swayimg
 sudo pacman -S power-profiles-daemon
 sudo pacman -S wlsunset
 sudo pacman -S waybar
+sudo pacman -S spotify
