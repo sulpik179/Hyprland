@@ -19,7 +19,6 @@
     "backlight",
     "power-profiles-daemon",
     "temperature",
-    "keyboard-state",
     "battery"
   ],
 
