@@ -5,54 +5,33 @@
 
 #waybar > * {
     padding: 2px; /* Отступ внутри модуля */
-    margin: 0 0px; /* Отступ между модулями если дополнительно */
+    margin: 0 0px; /* Отступ между модулями */
 }
 
 window#waybar {
     background-color: transparent;
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    transition: background-color 0.5s;
 }
-
-/* window#waybar.hidden {
-    opacity: 0.2;
-} */
-/* window#waybar.termite {
-    background-color: #3F3F3F;
-} */
-/* window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-} */
-
-
 
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background: #11282C;
-
 }
 
-
-
-#pulseaudio:hover {
-    background-color: #8d6700;
-}
-
-
-
+/* Workspaces */
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
     color: rgb(255, 243, 224);
     border-radius: 7px;
-    
+    transition: background-color 0.3s ease;
 }
 
 #workspaces button:hover {
@@ -63,13 +42,7 @@ button:hover {
     background-color: #ff524f;
 }
 
-
-
-/* #mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-} */
-
+/* Общие стили для основных модулей */
 #clock,
 #battery,
 #cpu,
@@ -86,31 +59,50 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#mpd {
+#mpd,
+#language,
+#bluetooth {
     padding: 0 10px;
-    color: #ffffff;
+    border-radius: 7px;
+    opacity: 0.9;
+    background-color: #11282C;
+    color: rgb(255, 243, 224);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#clock {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
+/* Hover для общих модулей: меняем местами цвета */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#scratchpad:hover,
+#power-profiles-daemon:hover,
+#mpd:hover,
+#language:hover,
+#bluetooth:hover {
+    background-color: rgb(255, 243, 224);
+    color: #11282C;
 }
 
-#battery {
+/* Особые состояния battery */
+#battery.charging,
+#battery.plugged {
     background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-    padding: 0 7px;
 }
-
-#battery.charging, #battery.plugged {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
+#battery.charging:hover,
+#battery.plugged:hover {
+    background-color: rgb(255, 243, 224);
+    color: #11282C;
 }
 
 @keyframes blink {
@@ -120,7 +112,6 @@ button:hover {
     }
 }
 
-/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -129,132 +120,55 @@ button:hover {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    border-radius: 7px;
 }
 
-#power-profiles-daemon {
-    padding-right: 15px;
-    border-radius: 7px;
-}
-
+/* Power profiles */
 #power-profiles-daemon.performance {
     background-color: #f53c3c;
     color: #ffffff;
-    border-radius: 7px;
 }
 
 #power-profiles-daemon.balanced {
     background-color: #2980b9;
     color: #ffffff;
-    border-radius: 7px;
 }
 
 #power-profiles-daemon.power-saver {
     background-color: #2ecc71;
     color: #000000;
-    border-radius: 7px;
 }
 
-#backlight {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
+#power-profiles-daemon.performance:hover,
+#power-profiles-daemon.balanced:hover,
+#power-profiles-daemon.power-saver:hover {
+    background-color: rgb(255, 243, 224);
+    color: #11282C;
 }
 
-#network {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#network.disconnected {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#pulseaudio {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#pulseaudio.muted {
-    background-color: #9d0000;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-/* #wireplumber {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-} */
-
-#wireplumber.muted {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#custom-media {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(222, 205, 175);
-    border-radius: 7px;
-}
-
-#temperature {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#temperature.critical {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-}
-
-#language {
-    background-color: #11282C;
-    opacity: 0.9;
-    color: rgb(255, 243, 224);
-    border-radius: 7px;
-    padding: 3 10px;
-}
-
- 
-#bluetooth {
-    background-color: #11282C;   /* Фон по умолчанию (для подключенного) */
-    opacity: 0.9;
-    color: rgb(255, 243, 224);            /* Цвет текста для подключенного */
-    border-radius: 7px;
-    padding: 3px 10px;
-}
-
-/* При выключенном Bluetooth */
+/* Bluetooth */
 #bluetooth.connected {
-  background-color: rgb(255, 243, 224);   
-  color: #11282C;
+    background-color: rgb(255, 243, 224);
+    color: #11282C;
 }
 
+#bluetooth.connected:hover {
+    background-color: #11282C;
+    color: rgb(255, 243, 224);
+}
 
+/* Spotify */
 #custom-spotify {
-    opacity: 0.9;
     background-color: #1db954;
     color: #11282C;
     border-radius: 7px;
-    padding: 3 10px;
-    font-weight: bold;
+    padding: 3px 10px;
+    font-weight: bolder;
+    opacity: 0.9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#custom-spotify:hover {
+    background-color: #11282C;
+    color: #1db954;
 }
 
