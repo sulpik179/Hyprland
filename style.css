@@ -43,7 +43,14 @@ button:hover {
 }
 
 /* Общие стили для основных модулей */
-#clock,
+#clock{
+    padding: 0 10px;
+    border-radius: 7px;
+    opacity: 0.9;
+    background-color: rgb(255, 243, 224);
+    color: #11282C;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 #battery,
 #cpu,
 #memory,
@@ -71,7 +78,10 @@ button:hover {
 }
 
 /* Hover для общих модулей: меняем местами цвета */
-#clock:hover,
+#clock:hover{
+    background-color: #11282C;
+    color: rgb(255, 243, 224);
+}
 #battery:hover,
 #cpu:hover,
 #memory:hover,
