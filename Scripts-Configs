@@ -88,24 +88,11 @@ set -g fish_greeting ""
 #  KITTY Terminal  #
   sudo pacman -S ttf-jetbrains-mono-nerd
   code .config/kitty/kitty.conf
-    #  _    _ _   _           _                      _             _  
-    # | | _(_) |_| |_ _   _  | |_ ___ _ __ _ __ ___ (_)_ __   __ _| | 
-    # | |/ / | __| __| | | | | __/ _ \ '__| '_ ` _ \| | '_ \ / _` | | 
-    # |   <| | |_| |_| |_| | | ||  __/ |  | | | | | | | | | | (_| | | 
-    # |_|\_\_|\__|\__|\__, |  \__\___|_|  |_| |_| |_|_|_| |_|\__,_|_| 
-    #                 |___/              _          _   _             
-    #   ___ _   _ ___| |_ ___  _ __ ___ (_)______ _| |_(_) ___  _ __  
-    #  / __| | | / __| __/ _ \| '_ ` _ \| |_  / _` | __| |/ _ \| '_ \ 
-    # | (__| |_| \__ \ || (_) | | | | | | |/ / (_| | |_| | (_) | | | |
-    #  \___|\__,_|___/\__\___/|_| |_| |_|_/___\__,_|\__|_|\___/|_| |_|
-    
-    ##########################################################################
     # font
     font_family JetBrainsMono Nerd Font
     enable_ligatures yes
     # opacity and blur 
     background_opacity 0.85
-    background_blur 0.9
     # window layout
     remember_window_size  no
     initial_window_width  1200
@@ -118,6 +105,7 @@ set -g fish_greeting ""
 
     # tab bar customization
     tab_bar_style powerline
+
     tab_powerline_style slanted
     tab_bar_edge bottom
     tab_bar_align left
