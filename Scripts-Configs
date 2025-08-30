@@ -1,7 +1,7 @@
 mkdir -p ~/.config/waybar
 cd ~/.config/waybar
-mkdir ~/.config/waybar/style.css
-mkdir ~/.config/waybar/config.jsonc
+touch style.css config.jsonc
+
 
 #  TOUCHPAD  #
 code  ~/.config/scripts/touchpad-toggle.sh
