@@ -18,8 +18,9 @@ iwgtk
 sudo pacman -S flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-
     #  FLATPAK APPS  #
+    flatpak install flathub com.visualstudio.code
+    flatpak install flathub org.telegram.desktop
 
 #  APPS  #
 sudo pacman -S neovim nautilus swww obsidian hyprpicker swayimg power-profiles-daemon wlsunset waybar spotify playerctl
