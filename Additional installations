@@ -7,17 +7,6 @@ echo /usr/bin/fish | sudo tee -a /etc/shells
 sudo chsh -s /usr/bin/fish
 reboot
 
-#  YAY  #
-sudo pacman -Syu
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
-    #  YAY APPS  #
-    yay -S visual-studio-code-bin  #  vs code
-    yay -S telegram-desktop-bin  #  telegram
-
 #  IWGTK  #
 sudo pacman -S iwd
 sudo systemctl enable --now iwd.service
