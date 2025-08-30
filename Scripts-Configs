@@ -55,6 +55,7 @@ else
 fi
 
 #  NOTIONS  #
+mkdir -p ~/.config/mako
 code ~/.config/mako/config
 
 font=JetBrains Mono 11
