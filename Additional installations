@@ -3,6 +3,7 @@ sudo pacman -Syu
 
 #  FISH SHELL  #
 sudo pacman -S fish
+echo /usr/bin/fish | sudo tee -a /etc/shells
 sudo chsh -s /usr/bin/fish
 reboot
 
