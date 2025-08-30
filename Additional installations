@@ -31,7 +31,6 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
     #  FLATPAK APPS  #
 
 #  APPS  #
-sudo pacman -S neovim nautilus swww obsidian hyprpicker 
-swayimg power-profiles-daemon wlsunset waybar spotify playerctl
+sudo pacman -S neovim nautilus swww obsidian hyprpicker swayimg power-profiles-daemon wlsunset waybar spotify playerctl
 
 
