@@ -1,4 +1,5 @@
 mkdir -p ~/.config/waybar
+mkdir ~/.config/scripts
 cd ~/.config/waybar
 touch style.css config.jsonc
 
@@ -30,8 +31,7 @@ chmod +x ~/.config/scripts/touchpad-toggle.sh
 
 
 #  RESTART_WAYBAR.SH  #
-  mkdir ~/.config/scripts
-  code  ~/.config/scripts/restart_waybar.sh
+  code ~/.config/scripts/restart_waybar.sh
     #!/bin/fish
     killall waybar
     sleep 0.1
