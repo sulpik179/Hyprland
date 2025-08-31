@@ -15,6 +15,6 @@ yay -S iwgtk
 iwgtk
 
 #  APPS  #
-sudo pacman -S neovim nautilus swww obsidian hyprpicker swayimg power-profiles-daemon wlsunset waybar spotify playerctl libnotify inetutils ttf-jetbrains-mono-nerd
+sudo pacman -S neovim nautilus swww obsidian hyprpicker swayimg power-profiles-daemon wlsunset waybar spotify playerctl libnotify inetutils ttf-jetbrains-mono-nerd mako
 
 
