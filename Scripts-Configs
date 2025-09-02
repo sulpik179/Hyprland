@@ -3,6 +3,19 @@ mkdir ~/.config/scripts
 cd ~/.config/waybar
 touch style.css config.jsonc
 
+#  BLUETOOTH  #
+sudo pacman -S bluez bluez-utils blueman waybar rofi pavucontrol 
+touch ~/.config/scripts/toggle-bluetooth.sh
+
+#!/bin/bash
+state=$(bluetoothctl show | grep "Powered" | awk '{print $2}')
+if [ "$state" = "yes" ]; then
+  bluetoothctl power off
+else
+  bluetoothctl power on
+fi
+
+chmod +x ~/.config/scripts/toggle-bluetooth.sh
 
 #  TOUCHPAD  #
 code  ~/.config/scripts/touchpad-toggle.sh
