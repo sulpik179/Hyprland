@@ -85,20 +85,15 @@
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle"
   },
 
-  "bluetooth": {
-    "format": ":(",
-    "format-connected": ":)",
-    "format-disabled": ":(",
-    "tooltip-format-connected": "{device_alias}\n{device_address}",
-    "menu": "on-hover",
-    "menu-file": "~/.config/waybar/bluetooth_menu.xml",
-    "menu-actions": {
-      "connect": "bluetoothctl connect {device_address}",
-      "disconnect": "bluetoothctl disconnect {device_address}"
-    },
-    "on-click": "blueman-manager",
-    "on-click-right": "pavucontrol"
-  },
+"bluetooth": {
+  
+  "format-off": ":(",
+  "format-connected": ":)",
+  "format-on": ":|",
+  "tooltip-format-connected": "{device_alias}\n{device_address}",
+  "on-click": "blueman-manager",
+  "on-click-right": "~/.config/scripts/toggle-bluetooth.sh"
+},
 
   "hyprland/language": {
     "format": "{}",
