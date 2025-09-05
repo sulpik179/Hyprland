@@ -20,6 +20,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 #  F APPS  #
 sudo flatpak install flathub com.visualstudio.code
+sudo flatpak install flathub org.telegram.desktop
 alias code='flatpak run com.visualstudio.code'
 nvim  ~/.config/fish/config.fish
 echo "alias code='flatpak run com.visualstudio.code'" >> ~/.config/fish/config.fish
