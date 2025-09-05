@@ -26,6 +26,6 @@ echo "alias code='flatpak run com.visualstudio.code'" >> ~/.config/fish/config.f
 
 
 #  APPS  #
-sudo pacman -S neovim nautilus swww obsidian hyprpicker swayimg power-profiles-daemon wlsunset waybar spotify playerctl libnotify inetutils ttf-jetbrains-mono-nerd mako
+sudo pacman -S neovim nautilus swww obsidian hyprpicker swayimg power-profiles-daemon wlsunset waybar playerctl libnotify inetutils ttf-jetbrains-mono-nerd mako
 
 
