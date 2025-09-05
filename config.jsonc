@@ -6,19 +6,18 @@
     "bluetooth",
     "network",
     "hyprland/language",
-    "clock",
     "custom/spotify"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
+    "clock",
     "cpu",
     "memory",
     "pulseaudio",
     "backlight",
     "power-profiles-daemon",
-    "temperature",
     "battery"
   ],
 
@@ -28,7 +27,7 @@
   },
 
   "backlight": {
-    "format": "{icon}  {percent}",
+    "format": "{icon} {percent}",
     "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
 
@@ -37,9 +36,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}  {icon}",
+    "format": "{capacity} {icon} ",
     "format-full": "{capacity} {icon}",
-    "format-charging": "{capacity} ⏼",
+    "format-charging": "{capacity} ",
     "format-plugged": "{capacity} ",
     "format-alt": "{time} {icon}",
     "format-icons": ["", "", "", "", ""]
@@ -58,7 +57,7 @@
   },
 
   "network": {
-    "format-wifi": "   {signalStrength}",
+    "format-wifi": "  {signalStrength}",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
@@ -67,10 +66,10 @@
   },
 
   "pulseaudio": {
-    "format": "{icon}  {volume}",
+    "format": "{icon} {volume}",
     "format-bluetooth": "{volume} ",
     "format-bluetooth-muted": " ",
-    "format-muted": "",
+    "format-muted": "✖︎",
     "format-source": "{volume} ",
     "format-source-muted": "",
     "format-icons": {
@@ -94,6 +93,8 @@
   "on-click": "blueman-manager",
   "on-click-right": "~/.config/scripts/toggle-bluetooth.sh"
 },
+
+
 
   "hyprland/language": {
     "format": "{}",
