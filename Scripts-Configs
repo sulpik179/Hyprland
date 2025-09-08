@@ -127,3 +127,13 @@ set -g fish_greeting ""
     tab_bar_align left
     active_tab_font_style   bold
     inactive_tab_font_style normal
+
+#  VS CODE CONFIG  #
+{
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.fontWeight": "normal",
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDragAndDrop": false,
+}
